@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas Seguras Kids - Gestión de Rutas</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/HTML/index.html">
+                    <img src="/Imagenes/Logo horizontal.png" alt="Logo Rutas Seguras Kids" class="main-logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="/HTML/index.html" class="nav-link" id="nav-inicio">Inicio</a></li>
+                    <li><a href="/HTML/registro.html" class="nav-link" id="nav-registro">Registro de Estudiantes</a></li>
+                    <li><a href="/HTML/rutas.html" class="nav-link active" id="nav-rutas">Rutas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="weather-banner">
+        <div class="weather-container">
+            <span class="weather-title">El clima de Bucaramanga es:</span>
+            <div id="weather-data" class="weather-loading">
+                <span class="spinner">⏳</span> Cargando reporte meteorológico en tiempo real...
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section id="rutas-section" class="routes-section">
+            <div class="section-container">
+                <h2 class="crud-main-title">Control y Asignación de Rutas Escolares</h2>
+                <p class="section-description">Asigna eficientemente los estudiantes registrados a sus respectivos conductores y monitorea la ocupación del bus.</p>
+
+                <div class="routes-grid">
+                    
+                    <article class="route-card" data-driver-id="1">
+                        <div class="route-driver-hero">
+                            <div class="route-avatar-container">
+                                <img src="/Imagenes/carrusel 1.png" alt="Conductor 1" class="route-driver-img">
+                            </div>
+                            <div class="route-driver-basics">
+                                <h3 class="driver-display-name">[Nombre Conductor 1]</h3>
+                                <p><strong>Edad:</strong> 45 años</p>
+                            </div>
+                        </div>
+                        <div class="route-details-box">
+                            <p>📍 <strong>Ruta:</strong> Norte - Comuneros / Cabecera</p>
+                            <p>⏰ <strong>Inicio:</strong> 06:15 AM</p>
+                        </div>
+                        <div class="route-capacity-bar">
+                            <span class="capacity-label">Pasajeros asignados:</span>
+                            <span class="capacity-counter">0 / 15</span>
+                        </div>
+                        <div class="assigned-students-list">
+                            </div>
+                        <button class="btn-primary btn-assign-student">
+                            + Agregar estudiante a la ruta
+                        </button>
+                    </article>
+
+                    <article class="route-card" data-driver-id="2">
+                        <div class="route-driver-hero">
+                            <div class="route-avatar-container">
+                                <img src="/Imagenes/carrusel 2.png" alt="Conductor 2" class="route-driver-img">
+                            </div>
+                            <div class="route-driver-basics">
+                                <h3 class="driver-display-name">[Nombre Conductor 2]</h3>
+                                <p><strong>Edad:</strong> 38 años</p>
+                            </div>
+                        </div>
+                        <div class="route-details-box">
+                            <p>📍 <strong>Ruta:</strong> Sur - Floridablanca / Cañaveral</p>
+                            <p>⏰ <strong>Inicio:</strong> 06:00 AM</p>
+                        </div>
+                        <div class="route-capacity-bar">
+                            <span class="capacity-label">Pasajeros asignados:</span>
+                            <span class="capacity-counter">0 / 15</span>
+                        </div>
+                        <div class="assigned-students-list"></div>
+                        <button class="btn-primary btn-assign-student">
+                            + Agregar estudiante a la ruta
+                        </button>
+                    </article>
+
+                    <article class="route-card" data-driver-id="3">
+                        <div class="route-driver-hero">
+                            <div class="route-avatar-container">
+                                <img src="/Imagenes/carrusel 3.png" alt="Conductor 3" class="route-driver-img">
+                            </div>
+                            <div class="route-driver-basics">
+                                <h3 class="driver-display-name">[Nombre Conductor 3]</h3>
+                                <p><strong>Edad:</strong> 51 años</p>
+                            </div>
+                        </div>
+                        <div class="route-details-box">
+                            <p>📍 <strong>Ruta:</strong> Occidente - Real de Minas / Mutis</p>
+                            <p>⏰ <strong>Inicio:</strong> 06:30 AM</p>
+                        </div>
+                        <div class="route-capacity-bar">
+                            <span class="capacity-label">Pasajeros asignados:</span>
+                            <span class="capacity-counter">0 / 15</span>
+                        </div>
+                        <div class="assigned-students-list"></div>
+                        <button class="btn-primary btn-assign-student">
+                            + Agregar estudiante a la ruta
+                        </button>
+                    </article>
+
+                    <article class="route-card" data-driver-id="4">
+                        <div class="route-driver-hero">
+                            <div class="route-avatar-container">
+                                <img src="/Imagenes/carrusel 4.png" alt="Conductor 4" class="route-driver-img">
+                            </div>
+                            <div class="route-driver-basics">
+                                <h3 class="driver-display-name">[Nombre Conductor 4]</h3>
+                                <p><strong>Edad:</strong> 42 años</p>
+                            </div>
+                        </div>
+                        <div class="route-details-box">
+                            <p>📍 <strong>Ruta:</strong> Oriente - Morrorrico / El Alvia</p>
+                            <p>⏰ <strong>Inicio:</strong> 05:45 AM</p>
+                        </div>
+                        <div class="route-capacity-bar">
+                            <span class="capacity-label">Pasajeros asignados:</span>
+                            <span class="capacity-counter">0 / 15</span>
+                        </div>
+                        <div class="assigned-students-list"></div>
+                        <button class="btn-primary btn-assign-student">
+                            + Agregar estudiante a la ruta
+                        </button>
+                    </article>
+
+                    <article class="route-card" data-driver-id="5">
+                        <div class="route-driver-hero">
+                            <div class="route-avatar-container">
+                                <img src="/Imagenes/carrusel 5.png" alt="Conductor 5" class="route-driver-img">
+                            </div>
+                            <div class="route-driver-basics">
+                                <h3 class="driver-display-name">[Nombre Conductor 5]</h3>
+                                <p><strong>Edad:</strong> 35 años</p>
+                            </div>
+                        </div>
+                        <div class="route-details-box">
+                            <p>📍 <strong>Ruta:</strong> Girón - Poblado / Centro</p>
+                            <p>⏰ <strong>Inicio:</strong> 05:50 AM</p>
+                        </div>
+                        <div class="route-capacity-bar">
+                            <span class="capacity-label">Pasajeros asignados:</span>
+                            <span class="capacity-counter">0 / 15</span>
+                        </div>
+                        <div class="assigned-students-list"></div>
+                        <button class="btn-primary btn-assign-student">
+                            + Agregar estudiante a la ruta
+                        </button>
+                    </article>
+
+                    <article class="route-card" data-driver-id="6">
+                        <div class="route-driver-hero">
+                            <div class="route-avatar-container">
+                                <img src="/Imagenes/carrusel 6.png" alt="Conductor 6" class="route-driver-img">
+                            </div>
+                            <div class="route-driver-basics">
+                                <h3 class="driver-display-name">[Nombre Conductor 6]</h3>
+                                <p><strong>Edad:</strong> 47 años</p>
+                            </div>
+                        </div>
+                        <div class="route-details-box">
+                            <p>📍 <strong>Ruta:</strong> Piedecuesta - Centro / Barro Blanco</p>
+                            <p>⏰ <strong>Inicio:</strong> 05:30 AM</p>
+                        </div>
+                        <div class="route-capacity-bar">
+                            <span class="capacity-label">Pasajeros asignados:</span>
+                            <span class="capacity-counter">0 / 15</span>
+                        </div>
+                        <div class="assigned-students-list"></div>
+                        <button class="btn-primary btn-assign-student">
+                            + Agregar estudiante a la ruta
+                        </button>
+                    </article>
+
+                </div> </div>
+        </section>
+
+        <div id="assign-modal" class="modal-overlay hidden">
+            <div class="modal-content modal-large">
+                <div class="modal-header">
+                    <h3>Seleccionar Estudiante para la Ruta</h3>
+                    <button id="btn-close-assign-modal" class="btn-close">&times;</button>
+                </div>
+                
+                <div class="modal-search-bar" style="padding: 1.5rem 1.5rem 0;">
+                    <label for="route-student-search" class="search-subtitle">Buscar estudiante por código estudiantil o por Nombre</label>
+                    <div class="search-input-wrapper">
+                        <input type="text" id="route-student-search" placeholder="Ej. Antony Lopez o 20261001..." autocomplete="off">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                </div>
+
+                <div id="eligible-students-list" class="modal-students-selection-list" style="padding: 1.5rem; max-height: 300px; overflow-y: auto;">
+                    </div>
+                
+                <div class="modal-footer" style="padding: 1rem 1.5rem;">
+                    <button id="btn-cancel-assign" class="btn-secondary">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <p class="footer-company-name">Rutas Seguras Kids</p>
+            </div>
+            <div class="footer-contact">
+                <p>Contacto: <a href="mailto:contacto@rutasseguraskids.com" class="footer-link">contacto@rutasseguraskids.com</a></p>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 Rutas Seguras Kids. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/JS/RutasApp.JS" type="module"></script>
+</body>
+</html>

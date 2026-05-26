@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas Seguras Kids - Registro de Estudiantes</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/HTML/index.html">
+                    <img src="/Imagenes/Logo horizontal.png" alt="Logo Rutas Seguras Kids" class="main-logo">
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="/HTML/index.html" class="nav-link" id="nav-inicio">Inicio</a></li>
+                    <li><a href="/HTML/registro.html" class="nav-link active" id="nav-registro">Registro de Estudiantes</a></li>
+                    <li><a href="/HTML/rutas.html" class="nav-link" id="nav-rutas">Rutas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="registro" class="crud-section">
+
+            <div class="crud-hero-banner">
+    <img src="/Imagenes/Portada.png" alt="Banner Sistema de Registro Rutas Seguras Kids" class="banner-img">
+</div>
+
+            <div class="section-container">
+                
+                <h2 class="crud-main-title">Bienvenido al sistema de registro de estudiantes</h2>
+                
+                <div class="crud-actions-bar">
+                    
+                    <div class="search-box-container">
+                        <label for="student-search" class="search-subtitle">Buscar estudiante por código estudiantil o por Nombre</label>
+                        <div class="search-input-wrapper">
+                            <input type="text" id="student-search" placeholder="Ej. David Dominguez o 20261..." autocomplete="off">
+                            <span class="search-icon">🔍</span>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-add-container">
+                        <button id="btn-open-modal" class="btn-primary btn-add-student">
+                            <span class="btn-icon">+</span> Agregar estudiante
+                        </button>
+                    </div>
+                    
+                </div> <div id="students-grid" class="students-grid">
+                    <p class="no-data-message">No hay estudiantes registrados en el sistema. ¡Haz clic en "Agregar estudiante" para comenzar!</p>
+                </div>
+
+            </div> <div id="student-modal" class="modal-overlay hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modal-title">Registrar Nuevo Estudiante</h3>
+                        <button id="btn-close-modal" class="btn-close" aria-label="Cerrar formulario">&times;</button>
+                    </div>
+                    
+                    <form id="student-form" novalidate>
+                        <div class="form-group">
+                            <label for="student-name">Nombre del estudiante</label>
+                            <input type="text" id="student-name" placeholder="Ingresa los nombres y apellidos completos" required>
+                        </div>
+                        
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="student-room">Grado cursado</label>
+                                <input type="text" id="student-room" placeholder="Ej. 4A, Transición" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="student-code">Código de estudiante</label>
+                                <input type="text" id="student-code" placeholder="Código único institucional" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="student-phone">Celular de contacto (Acudiente)</label>
+                            <input type="tel" id="student-phone" placeholder="Número de 10 dígitos del acudiente" required>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" id="btn-cancel-form" class="btn-secondary">Cancelar</button>
+                            <button type="submit" id="btn-submit-form" class="btn-primary">Guardar Estudiante</button>
+                        </div>
+                    </form>
+                </div>
+            </div> </section> </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <p class="footer-company-name">Rutas Seguras Kids</p>
+            </div>
+            <div class="footer-contact">
+                <p>Contacto: <a href="mailto:contacto@rutasseguraskids.com" class="footer-link">contacto@rutasseguraskids.com</a></p>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 Rutas Seguras Kids. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/JS/RegistroApp.js" type="module"></script>
+</body>
+</html>
