@@ -119,9 +119,32 @@ function deleteStudent(id) {
     const confirmDelete = confirm(`¿Estás seguro de que deseas eliminar el perfil del estudiante ${student.name} (Código: ${student.code})?\n\nEsta acción no se puede deshacer.`);
     
     if (confirmDelete) {
+        // 1. Eliminar al estudiante del arreglo principal
         students = students.filter(st => st.id !== id);
         saveToLocalStorage();
         renderStudents();
+
+        // 2. ELIMINACIÓN EN CASCADA: Sacarlo de las rutas asignadas
+        let routeAssignments = JSON.parse(localStorage.getItem('rsk_route_assignments')) || {};
+        let isRouteModified = false;
+
+        // Recorremos cada ruta (por ID de conductor)
+        for (let driverId in routeAssignments) {
+            const originalLength = routeAssignments[driverId].length;
+            
+            // Filtramos la ruta para dejar solo a los estudiantes que NO sean el que acabamos de borrar
+            routeAssignments[driverId] = routeAssignments[driverId].filter(studentId => studentId !== id);
+            
+            // Si la longitud cambió, significa que el estudiante estaba en este bus
+            if (routeAssignments[driverId].length !== originalLength) {
+                isRouteModified = true;
+            }
+        }
+
+        // 3. Guardamos los cambios de las rutas en el LocalStorage (solo si hubo cambios)
+        if (isRouteModified) {
+            localStorage.setItem('rsk_route_assignments', JSON.stringify(routeAssignments));
+        }
     }
 }
 
@@ -134,7 +157,7 @@ function renderStudents() {
 
     if (students.length === 0) {
         dom.studentsGrid.innerHTML = `
-            <p class="no-data-message">No hay estudiantes registrados en el sistema. ¡Haz clic en "Agregar estudiante" para comenzar!</p>
+            <p class="no-data-message">No hay estudiantes registrados en el sistema. Haz clic en "Agregar estudiante"</p>
         `;
         return;
     }

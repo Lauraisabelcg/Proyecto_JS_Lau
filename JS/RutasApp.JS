@@ -45,13 +45,15 @@ function initEventListeners() {
 async function loadCurrentWeather() {
     const lat = "7.1254";
     const lon = "-73.1198";
-    const apiKey = "8428a8d11d21213320c2921509166d72"; 
+    
+    const apiKey = "bd5e378503939ddaee76f12ad7a97608"; 
+    
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=es`;
 
     try {
         const response = await fetch(url);
         
-        if (!response.ok) throw new Error("Error en la comunicación con el servidor meteorológico");
+        if (!response.ok) throw new Error(`Error de respuesta: ${response.status}`);
         
         const data = await response.json();
         
@@ -68,9 +70,10 @@ async function loadCurrentWeather() {
         dom.weatherData.innerHTML = `<span>${weatherEmoji} <strong>${temp}°C</strong>, ${desc.charAt(0).toUpperCase() + desc.slice(1)}</span>`;
         
     } catch (error) {
-        console.error("API Error:", error);
+        console.error("Error al conectar con OpenWeather:", error);
+        
         dom.weatherData.className = "weather-error";
-        dom.weatherData.innerHTML = `<span>⛅ <strong>26°C</strong>, Clima templado </span>`;
+        dom.weatherData.innerHTML = `<span>⛅ <strong>26°C</strong>, Clima templado...</span>`;
     }
 }
 
