@@ -4,6 +4,12 @@ let routeAssignments = JSON.parse(localStorage.getItem('rsk_route_assignments'))
 };
 
 let activeDriverId = null; 
+let presentsS = JSON.parse(localStorage.getItem('presents')) || {
+    "1": [], "2": [], "3": [], "4": [], "5": [], "6": []
+};
+let abscentsS = JSON.parse(localStorage.getItem('abscents')) || {
+    "1": [], "2": [], "3": [], "4": [], "5": [], "6": []
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     initDOMReferences();
@@ -202,14 +208,31 @@ function renderAllRoutes() {
                         <small>Cód: ${student.code} | Grado: ${student.room}</small>
                     </div>
                     <button class="btn-remove-from-route" title="Retirar de la ruta">&times;</button>
+                    <button class="abscents" title="esta presente">&times;</button>
+                    <button class="presents" title="esta presente">&times;</button> 
                 `;
 
                 badge.querySelector('.btn-remove-from-route').addEventListener('click', () => {
                     removeStudentFromRoute(driverId, id);
                 });
+                badge.querySelector('.abscents').addEventListener('click', () => {  
+                
 
+                    const counterStudents=document.querySelectorAll(".abscents")
+                    counterStudents.length;
+                    if (counterStudents>=0)saveAbsData()
+                    
+                });
+                badge.querySelector('.presents').addEventListener('click', () => {
+                    //removeStudentFromRoute(driverId, id);
+                });
                 listContainer.appendChild(badge);
             }
         });
     });
+
 }
+function saveAbsData() {
+    localStorage.setItem('abscents', JSON.stringify(abscentsS));
+}
+
